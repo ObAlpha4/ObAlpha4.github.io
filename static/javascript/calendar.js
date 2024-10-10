@@ -14,6 +14,23 @@ function updateCalendar() {
     generateCalendar(year, month);
 }
 
+function isToday(year, month, day) {
+    const today = new Date();
+    if (day === today.getDate()) {
+        if (month == today.getMonth() + 1) {
+            if (year == today.getFullYear()) {
+                return 1;
+            } else {
+                return -1;
+            }
+        } else {
+            return -2;
+        }
+    } else {
+        return -3;
+    }
+}
+
 function getThisMonthString() {
     const today = new Date();
     const year = today.getFullYear();
@@ -56,7 +73,6 @@ function generateCalendar(year, month) {
     }
     const daysOfWeek = ["日", "一", "二", "三", "四", "五", "六"];
     const date = new Date(year, month - 1, 1);
-    const currentDate = new Date();
     const calendar = [];
     let week = new Array(7).fill(null);
 
@@ -84,15 +100,10 @@ function generateCalendar(year, month) {
         for (const day of week) {
             if (day === null) {
                 html += `<td class="table-light">${""}</td>`;
-            } else if (
-                day === currentDate.getDate() &&
-                month == currentDate.getMonth() + 1
-            ) {
-                if (year === currentDate.getFullYear()) {
-                    html += `<td class="table-primary">${day}</td>`;
-                } else {
-                    html += `<td class="table-secondary">${day}</td>`;
-                }
+            } else if (isToday(year, month, day) === 1) {
+                html += `<td class="table-primary">${day}</td>`;
+            } else if (isToday(year, month, day) === -1) {
+                html += `<td class="table-secondary">${day}</td>`;
             } else {
                 html += `<td>${day}</td>`;
             }
