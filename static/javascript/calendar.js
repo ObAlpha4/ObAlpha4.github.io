@@ -23,9 +23,13 @@ function generateCalendar(year, month) {
     html += "</tr></thead><tbody>";
 
     for (const week of calendar) {
-        html += '<tr class="table-light">';
+        html += '<tr>';
         for (const day of week) {
-            html += `<td>${day || ""}</td>`;
+            if (day === null) {
+                html += `<td class="table-light">${""}</td>`;
+            } else {
+                html += `<td>${day}</td>`;
+            }
         }
         html += "</tr>";
     }
