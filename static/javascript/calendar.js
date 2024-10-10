@@ -16,20 +16,20 @@ function generateCalendar(year, month) {
         calendar.push(week);
     }
 
-    let html = "<table><tr>";
+    let html = '<table class="table table-bordered"><thead class="table-info"><tr>';
     for (const day of daysOfWeek) {
         html += `<th>${day}</th>`;
     }
-    html += "</tr>";
+    html += "</tr></thead><tbody>";
 
     for (const week of calendar) {
-        html += "<tr>";
+        html += '<tr class="table-light">';
         for (const day of week) {
             html += `<td>${day || ""}</td>`;
         }
         html += "</tr>";
     }
-    html += "</table>";
+    html += "</tbody></table>";
 
     document.getElementById("calendar").innerHTML = html;
 }
@@ -39,3 +39,7 @@ function updateCalendar() {
     const month = document.getElementById("month").value;
     generateCalendar(year, month);
 }
+
+// function defaultCalendar() {
+//     const currentYear = today.
+// }
