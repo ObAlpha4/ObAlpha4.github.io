@@ -56,6 +56,7 @@ function generateCalendar(year, month) {
     }
     const daysOfWeek = ["日", "一", "二", "三", "四", "五", "六"];
     const date = new Date(year, month - 1, 1);
+    const currentDay = new Date().getDate();
     const calendar = [];
     let week = new Array(7).fill(null);
 
@@ -72,7 +73,7 @@ function generateCalendar(year, month) {
     }
 
     let html =
-        '<table class="table table-bordered"><thead class="table-info"><tr>';
+        '<table class="table table-bordered text-center"><thead class="table-info"><tr>';
     for (const day of daysOfWeek) {
         html += `<th>${day}</th>`;
     }
@@ -83,6 +84,8 @@ function generateCalendar(year, month) {
         for (const day of week) {
             if (day === null) {
                 html += `<td class="table-light">${""}</td>`;
+            } else if (day === currentDay) {
+                html += `<td class="table-warning fw-bold">${day}</td>`;
             } else {
                 html += `<td>${day}</td>`;
             }
