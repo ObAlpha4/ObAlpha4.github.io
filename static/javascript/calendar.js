@@ -14,12 +14,46 @@ function updateCalendar() {
     generateCalendar(year, month);
 }
 
+function getThisMonthString() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    return `${year}年${month}月`;
+}
+
 function getMonthString(year, month) {
     let str = `<p>${year}年${month}月</p>`;
     document.getElementById("monthString").innerHTML = str;
 }
 
+function aviodWrongInput() {
+    const year = document.getElementById("year").value;
+    const month = document.getElementById("month").value;
+    if (year === "" || month === "" || year === null || month === null) {
+        alert(
+            "注意，年份或月份不能为空！\n即将跳转到" +
+                getThisMonthString() +
+                "。"
+        );
+        // Reset to default
+        return false;
+    } else if (month < 1 || month > 12) {
+        alert(
+            "注意，月份必须在1-12之间！\n即将跳转到" +
+                getThisMonthString() +
+                "。"
+        );
+        // Reset to default
+        return false;
+    }
+    return true;
+}
+
 function generateCalendar(year, month) {
+    if (!aviodWrongInput()) {
+        defaultCalendar();
+        return;
+    }
     const daysOfWeek = ["日", "一", "二", "三", "四", "五", "六"];
     const date = new Date(year, month - 1, 1);
     const calendar = [];

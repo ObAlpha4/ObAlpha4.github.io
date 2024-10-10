@@ -27,7 +27,7 @@
                         <li class="nav-item">
                             <a
                                 class="nav-link text-primary"
-                                href="./GetCalendar.html"
+                                href="./Calendar.html"
                                 >日历</a
                             >
                         </li>
@@ -39,10 +39,11 @@
         <div class="mx-auto" style="height: 100px">
             <p></p>
         </div>
+
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-5">
-                <div class="mb-3">
+            <div class="col-3">
+                <div class="mb-2">
                     <label for="year" class="form-label">年份:</label>
                     <input
                         type="number"
@@ -53,7 +54,9 @@
                         max="2100"
                     />
                 </div>
-                <div class="mb-3">
+            </div>
+            <div class="col-3">
+                <div class="mb-2">
                     <label for="month" class="form-label">月份:</label>
                     <input
                         type="number"
@@ -64,15 +67,20 @@
                         max="12"
                     />
                 </div>
+            </div>
+            <div class="col-2">
+                <div cclass="mx-auto" style="height: 31px"></div>
                 <button class="btn btn-primary" onclick="updateCalendar()">
-                    更新日历
+                    查询日历
                 </button>
             </div>
-            <div class="col-5"></div>
+            <div class="col-2"></div>
         </div>
-        <div class="mx-auto" style="height: 50px">
+
+        <div class="mx-auto" style="height: 25px">
             <p></p>
         </div>
+
         <div class="row">
             <div class="col-1"></div>
             <div class="col-10">
