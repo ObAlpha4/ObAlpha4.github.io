@@ -1,3 +1,24 @@
+function defaultCalendar() {
+    const today = new Date();
+    const year = today.getFullYear();
+    const month = today.getMonth() + 1;
+    document.getElementById("year").value = year;
+    document.getElementById("month").value = month;
+    updateCalendar();
+}
+
+function updateCalendar() {
+    const year = document.getElementById("year").value;
+    const month = document.getElementById("month").value;
+    getMonthString(year, month);
+    generateCalendar(year, month);
+}
+
+function getMonthString(year, month) {
+    let str = `<p>${year}年${month}月</p>`;
+    document.getElementById("monthString").innerHTML = str;
+}
+
 function generateCalendar(year, month) {
     const daysOfWeek = ["日", "一", "二", "三", "四", "五", "六"];
     const date = new Date(year, month - 1, 1);
@@ -16,14 +37,15 @@ function generateCalendar(year, month) {
         calendar.push(week);
     }
 
-    let html = '<table class="table table-bordered"><thead class="table-info"><tr>';
+    let html =
+        '<table class="table table-bordered"><thead class="table-info"><tr>';
     for (const day of daysOfWeek) {
         html += `<th>${day}</th>`;
     }
     html += "</tr></thead><tbody>";
 
     for (const week of calendar) {
-        html += '<tr>';
+        html += "<tr>";
         for (const day of week) {
             if (day === null) {
                 html += `<td class="table-light">${""}</td>`;
@@ -37,13 +59,3 @@ function generateCalendar(year, month) {
 
     document.getElementById("calendar").innerHTML = html;
 }
-
-function updateCalendar() {
-    const year = document.getElementById("year").value;
-    const month = document.getElementById("month").value;
-    generateCalendar(year, month);
-}
-
-// function defaultCalendar() {
-//     const currentYear = today.
-// }
