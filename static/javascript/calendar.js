@@ -26,7 +26,7 @@ function getMonthString(year, month) {
     document.getElementById("monthString").innerHTML = str;
 }
 
-function aviodWrongInput() {
+function avoidWrongInput() {
     const year = document.getElementById("year").value;
     const month = document.getElementById("month").value;
     if (year === "" || month === "" || year === null || month === null) {
@@ -50,13 +50,13 @@ function aviodWrongInput() {
 }
 
 function generateCalendar(year, month) {
-    if (!aviodWrongInput()) {
+    if (!avoidWrongInput()) {
         defaultCalendar();
         return;
     }
     const daysOfWeek = ["日", "一", "二", "三", "四", "五", "六"];
     const date = new Date(year, month - 1, 1);
-    const currentDay = new Date().getDate();
+    const currentDate = new Date();
     const calendar = [];
     let week = new Array(7).fill(null);
 
@@ -84,8 +84,15 @@ function generateCalendar(year, month) {
         for (const day of week) {
             if (day === null) {
                 html += `<td class="table-light">${""}</td>`;
-            } else if (day === currentDay) {
-                html += `<td class="table-warning fw-bold">${day}</td>`;
+            } else if (
+                day === currentDate.getDate() &&
+                month == currentDate.getMonth() + 1
+            ) {
+                if (year === currentDate.getFullYear()) {
+                    html += `<td class="table-primary">${day}</td>`;
+                } else {
+                    html += `<td class="table-secondary">${day}</td>`;
+                }
             } else {
                 html += `<td>${day}</td>`;
             }
