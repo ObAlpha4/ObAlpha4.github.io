@@ -107,11 +107,14 @@ function generateCalendar(year, month) {
 function pressEnter_year() {
     document.getElementById("year").addEventListener("keydown", function (event) {
         if (event.key === "Enter") {
+            if (document.getElementById("month").value === "") {
             alert("提示：您不能仅输入年份，请重试。");
+            } else {
+                updateCalendar();
+            }
         }
     });
 }
-
 
 function pressEnter_month() {
     document.getElementById("month").addEventListener("keydown", function (event) {

@@ -1,0 +1,14 @@
+:root {
+    --background-color: white;
+    --text-color: black;
+}
+
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #ffffff;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
