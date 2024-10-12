@@ -11,20 +11,30 @@
     <link rel="stylesheet" href="./static/css/imageContainer.css" />
     <link rel="stylesheet" href="./static/css/floatButton.css" />
     <script src="./static/javascript/rotateStar.js"></script>
+    <script src="./static/javascript/getTime.js"></script>
 
     <style>
         body {
             font-family: "MiSans", sans-serif;
+        }
+
+        @font-face {
+            font-family: 'YaHei-Consolas-Hybrid';
+            src: url('file:///./static/fonts/YaHei-Consolas-Hybrid.ttf') format('truetype');
+        }
+
+        table {
+            font-family: 'YaHei-Consolas-Hybrid', sans-serif;
         }
     </style>
     <title>你似乎来到了网络的荒野...</title>
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-light fixed-top">
+    <nav class="navbar navbar-expand-sm bg-light">
         <div class="navbar navbar-expand-sm">
             <div class="row">
-                <div class="mx-auto" style="width: 50px;">
+                <div class="mx-auto" style="width: 30px;">
                     <p></p>
                 </div>
                 <div class="col">
@@ -45,12 +55,43 @@
     </nav>
 
     <div class="row">
-        <div class="col">
-            <h2>Ciallo～(∠・ω< )⌒<span id="star">☆</span></h2>
-            <h3>正在施工中ing...等下再来看看吧？</h3>
-            <button class="fbtn" onclick="rotateStar()">Superise!</button>
+
+            <div class="container-fluid">
+                <p>现在是&nbsp;&nbsp;北京时间</p>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><span id="this_year"></span>年</td>
+                            <td><span id="this_month"></span>月</td>
+                            <td><span id="this_day"></span>日</td>
+                        </tr>
+                        <tr style="text-align: right;">
+                            <td><span id="this_hour"></span>时</td>
+                            <td><span id="this_minute"></span>分</td>
+                            <td><span id="this_second"></span>秒</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <script src="./static/javascript/getTime.js"></script>
+            </div>
+
+            <div class="row">
+                <div class="col-2"></div>
+                <div class="col-10">
+                    <h2>Ciallo～(∠・ω< )⌒<span id="star">☆</span></h2>
+                    <h3>正在施工中ing...</h3>
+                    <h3>等下再来看看吧？</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-4"></div>
+                <div class="col-4">
+                    <button class="fbtn" onclick="rotateStar()">Superise!</button>
+                </div>
+                <div class="col-4"></div>
+            </div>
         </div>
-    </div>
+
 </body>
 
 </html>
