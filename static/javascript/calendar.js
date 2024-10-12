@@ -47,20 +47,10 @@ function avoidWrongInput() {
     const year = document.getElementById("year").value;
     const month = document.getElementById("month").value;
     if (year === "" || month === "" || year === null || month === null) {
-        alert(
-            "注意，年份或月份不能为空！\n即将跳转到" +
-                getThisMonthString() +
-                "。"
-        );
-        // Reset to default
+        alert("注意，年份或月份不能为空！\n即将跳转到" + getThisMonthString() + "。");
         return false;
     } else if (month < 1 || month > 12) {
-        alert(
-            "注意，月份必须在1-12之间！\n即将跳转到" +
-                getThisMonthString() +
-                "。"
-        );
-        // Reset to default
+        alert("注意，月份必须在1-12之间！\n即将跳转到" + getThisMonthString() + "。");
         return false;
     }
     return true;
@@ -88,8 +78,7 @@ function generateCalendar(year, month) {
         calendar.push(week);
     }
 
-    let html =
-        '<table class="table table-bordered text-center"><thead class="table-info"><tr>';
+    let html = '<table class="table table-bordered text-center"><thead class="table-info"><tr>';
     for (const day of daysOfWeek) {
         html += `<th>${day}</th>`;
     }
@@ -113,4 +102,32 @@ function generateCalendar(year, month) {
     html += "</tbody></table>";
 
     document.getElementById("calendar").innerHTML = html;
+}
+
+function pressEnter() {
+    document.getElementById("year").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            alert("提示：您不能仅输入年份，请重试。");
+        }
+    });
+    document.getElementById("month").addEventListener("keydown", function (event) {
+        if (event.key === "Enter") {
+            updateCalendar();
+        }
+    });
+}
+
+function addLoadingANimation() {
+    document.getElementById("start-button").addEventListener("click", function () {
+        var loader = document.getElementById("loader");
+        var table = document.getElementById("calendar");
+
+        loader.style.display = "block";
+        table.style.display = "none";
+
+        setTimeout(function () {
+            loader.style.display = "none";
+            table.style.display = "block";
+        }, 3000);
+    });
 }
