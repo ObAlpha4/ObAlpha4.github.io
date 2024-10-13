@@ -26,30 +26,10 @@
                         <li class="nav-item">
                             <a class="nav-link active" href="./Calendar.html">日历</a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./RainbowDigitClock.html">霓虹数字时钟</a>
-                        </li>
                     </ul>
                 </div>
             </div>
         </div>
-        <!-- <button id="theme-toggle">切换主题</button>
-        <script>
-            const toggleButton = document.getElementById('theme-toggle');
-
-            toggleButton.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-
-                // 保存用户的选择到 localStorage
-                localStorage.setItem('theme', newTheme);
-            });
-
-            // 页面加载时从 localStorage 获取用户之前的选择
-            const savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        </script> -->
     </nav>
 
     <div class="mx-auto" style="height: 50px">
@@ -65,7 +45,7 @@
         <div class="col-md-4 col-lg-3">
             <label for="year" class="form-label">年份:</label>
             <input type="number" class="form-control" id="year" name="year" min="-271821" max="275759" />
-            <!-- 别问为什么是这两个值，问就是我自己一个一个一个...试出来的 -->
+            <!-- 别问为什么是这两个值，问就是我自己试出来的 -->
             <script>
                 pressEnter_year();
             </script>
