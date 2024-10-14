@@ -8,10 +8,8 @@
 
     <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
     <link rel="stylesheet" href="./static/css/siderBar.css" />
-    <link rel="stylesheet" href="./static/css/rotateStar.css" />
     <link rel="stylesheet" href="./static/css/floatButton.css" />
     <link rel="stylesheet" href="./static/css/clock.css" />
-    <script src="./static/javascript/rotateStar.js"></script>
     <style>
         body {
             font-family: "MiSans", sans-serif;
@@ -31,7 +29,7 @@
         <ul class="sidebarMenuInner">
             <li>ObAlpha4<span>Home Page</span></li>
             <li><a href="./pages/Calendar.html">日历</a></li>
-            <li><a href="#">测试页面</a></li>
+            <li><a href="./pages/hole.html">黑洞</a></li>
             <li><a href="#">测试页面</a></li>
         </ul>
     </div>
@@ -62,6 +60,21 @@
         </div>
         <div class="mainInner">
             <style>
+                .rotate-star {
+                    display: inline-block;
+                    animation: rotate 2s linear infinite;
+                }
+
+                @keyframes rotate {
+                    from {
+                        transform: rotate(0deg);
+                    }
+
+                    to {
+                        transform: rotate(360deg);
+                    }
+                }
+
                 p {
                     display: block;
                     font-size: 1.17em;
@@ -71,6 +84,12 @@
                     margin-right: 0;
                 }
             </style>
+            <script>
+                function rotateStar() {
+                    const star = document.getElementById("star");
+                    star.classList.toggle("rotate-star");
+                }
+            </script>
             <div>
                 <p style="font-size: 1.5em;">Ciallo～(∠・ω< )⌒<span id="star">☆</span></p>
                 <p>正在施工中ing...</p>
