@@ -44,6 +44,7 @@
     font-size: 40px;
     animation: blink 1s linear infinite;
     -webkit-animation: blink 1s linear infinite;
+    z-index: -1;
 }
 
 @keyframes blink {

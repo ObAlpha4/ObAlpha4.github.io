@@ -7,6 +7,7 @@ body {
 }
 
 .fbtn {
+    z-index: 1;
     color: purple;
     text-transform: uppercase;
     text-decoration: none;
@@ -34,7 +35,6 @@ body {
     left: -40px;
     transform: skewX(45deg);
     background-color: purple;
-    z-index: -1;
     transition: all 1s;
 }
 

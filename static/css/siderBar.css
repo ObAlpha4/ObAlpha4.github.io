@@ -55,6 +55,7 @@ body {
 }
 
 .sidebarMenuInner {
+    z-index: 100;
     margin: 0;
     padding: 0;
     border-top: 1px solid rgba(255, 255, 255, 0.10);
