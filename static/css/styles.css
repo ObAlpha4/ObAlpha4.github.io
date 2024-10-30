@@ -11,7 +11,7 @@
     font-size: 25px;
     font-family: "Consolas", "CONSOLA", monospace;
     color: #2982ff;
-    text-shadow: 0 0 1px #000;
+    text-shadow: 0 0 3px #000;
     -webkit-animation: color 10s infinite;
     animation: color 10s infinite;
 }
@@ -19,24 +19,24 @@
 @keyframes color {
     0% {
         color: #2982ff;
-        text-shadow: 0px 0px 5px #000;
+        text-shadow: 0px 0px 3px #000;
     }
 
     50% {
         color: #cc4343;
-        text-shadow: 0px 0px 5px #ff0000;
+        text-shadow: 0px 0px 3px #ff0000;
     }
 }
 
 @-webkit-keyframes color {
     0% {
         color: #2982ff;
-        text-shadow: 0px 0px 5px #000;
+        text-shadow: 0px 0px 3px #000;
     }
 
     50% {
         color: #cc4343;
-        text-shadow: 0px 0px 5px #ff0000;
+        text-shadow: 0px 0px 3px #ff0000;
     }
 }
 

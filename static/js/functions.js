@@ -1,15 +1,3 @@
-// 生成随机字符串
-function randomString() {
-    const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
-    const length = Math.floor(Math.random() * 21);
-    let result = '';
-    for (let i = 0; i < length; i++) {
-        const randomIndex = Math.floor(Math.random() * chars.length);
-        result += chars[randomIndex];
-    }
-    return result;
-}
-
 // 旋转星星
 function rotateStar() {
     const star = document.getElementById("star");
