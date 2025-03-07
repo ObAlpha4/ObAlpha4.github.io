@@ -5,79 +5,41 @@
     <meta charset="UTF-8" />
     <meta name="viewport"
         content="height=device-height, width=device-width, target-densitydpi=device-dpi, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="https://font.sec.miui.com/font/css?family=MiSans:400,700:MiSans" />
     <link rel="stylesheet" href="./static/css/bootstrap.css" />
     <link rel="stylesheet" href="./static/css/styles.css" />
     <link rel="stylesheet" href="./static/css/sideBar.css" />
     <script src="./static/jsavascript/bootstrap.js"></script>
     <script src="./static/js/functions.js"></script>
-
-    <style>
-        body {
-            font-family: "MiSans", sans-serif;
-            background-image: url('');
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-        }
-    </style>
     <link rel="icon" href="./static/img/logo.png">
     <title>旧日花簇</title>
 </head>
 
 <body onload="getTime('this_second'); generateCalendar();">
-    <div class="row">
-        <span style="height: 80px;"></span>
-    </div>
-    <div class="row">
-        <div class="col-1"></div>
-        <div class="col-8">
-            <div style="height: 12px"></div>
-            <span style="font-size: 36px;">时流若生，生逝如时。</span>
-            <div style="height: 5px"></div>
-            <table>
-                <tbody>
-                    <tr>
-                        <td><span class="clock" id="this_year"></span></td>
-                        <td><span style="font-size: 25px;">年</span></td>
-                        <td><span class="clock" id="this_month"></span></td>
-                        <td><span style="font-size: 25px;">月</span></td>
-                        <td><span class="clock" id="this_day"></span></td>
-                        <td><span style="font-size: 25px;">日</span></td>
-                    </tr>
-                    <tr style="text-align: right;">
-                        <td><span class="clock" id="this_hour"></span></td>
-                        <td><span style="font-size: 25px;">时</span></td>
-                        <td><span class="clock" id="this_minute"></span></td>
-                        <td><span style="font-size: 25px;">分</span></td>
-                        <td><span class="clock" id="this_second"></span></td>
-                    </tr>
-                </tbody>
-            </table>
-            <div style="height: 100px"></div>
-            <div>
-                <p style="font-size: 1.5em;">Ciallo～(∠・ω< )⌒<span id="star">☆</span></p>
-                <p>你似乎来到了网络的荒野</p>
-                <p>正在施工中ing...</p>
-                <p>等下再来看看吧？</p>
-                <button class="fbtn" onclick="rotateStar()">Superise!</button>
-            </div>
-        </div>
-        <div class="col-3 text-center">
-            <ul class="nav nav-pills flex-column sidebar">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">ObAlpha4<span>Home Page</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Oops, nothing here</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">还没开放的查询系统</a>
-                </li>
-            </ul>
-        </div>
+    <h3 style="font-size: 36px;">时流若生，生逝如时。</h3>
+    <table>
+        <tbody>
+            <tr>
+                <td><span class="clock" id="this_year"></span></td>
+                <td><span style="font-size: 25px;">年</span></td>
+                <td><span class="clock" id="this_month"></span></td>
+                <td><span style="font-size: 25px;">月</span></td>
+                <td><span class="clock" id="this_day"></span></td>
+                <td><span style="font-size: 25px;">日</span></td>
+            </tr>
+            <tr style="text-align: right;">
+                <td><span class="clock" id="this_hour"></span></td>
+                <td><span style="font-size: 25px;">时</span></td>
+                <td><span class="clock" id="this_minute"></span></td>
+                <td><span style="font-size: 25px;">分</span></td>
+                <td><span class="clock" id="this_second"></span></td>
+            </tr>
+        </tbody>
+    </table>
+    <div>
+        <p style="font-size: 1.5em;">Ciallo～(∠・ω< )⌒<span id="star">☆</span></p>
+        <p>你似乎来到了网络的荒野</p>
+        <p>正在施工中ing...等下再来看看吧？</p>
+        <button class="fbtn" onclick="rotateStar()">Superise!</button>
     </div>
 </body>
 
