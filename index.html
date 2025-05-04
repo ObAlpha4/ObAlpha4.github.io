@@ -1,46 +1,79 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport"
-        content="height=device-height, width=device-width, target-densitydpi=device-dpi, initial-scale=1.0" />
-    <link rel="stylesheet" href="./static/css/bootstrap.css" />
-    <link rel="stylesheet" href="./static/css/styles.css" />
-    <link rel="stylesheet" href="./static/css/sideBar.css" />
-    <script src="./static/jsavascript/bootstrap.js"></script>
-    <script src="./static/js/functions.js"></script>
-    <link rel="icon" href="./static/img/logo.png">
-    <title>旧日花簇</title>
+    <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" />
+    <link rel="stylesheet" href="./static/css/output.css" />
+    <title>登录</title>
+    <link rel="icon" href="./static/img/logo.png" />
 </head>
 
-<body onload="getTime('this_second'); generateCalendar();">
-    <h3 style="font-size: 36px;">时流若生，生逝如时。</h3>
-    <table>
-        <tbody>
-            <tr>
-                <td><span class="clock" id="this_year"></span></td>
-                <td><span style="font-size: 25px;">年</span></td>
-                <td><span class="clock" id="this_month"></span></td>
-                <td><span style="font-size: 25px;">月</span></td>
-                <td><span class="clock" id="this_day"></span></td>
-                <td><span style="font-size: 25px;">日</span></td>
-            </tr>
-            <tr style="text-align: right;">
-                <td><span class="clock" id="this_hour"></span></td>
-                <td><span style="font-size: 25px;">时</span></td>
-                <td><span class="clock" id="this_minute"></span></td>
-                <td><span style="font-size: 25px;">分</span></td>
-                <td><span class="clock" id="this_second"></span></td>
-            </tr>
-        </tbody>
-    </table>
-    <div>
-        <p style="font-size: 1.5em;">Ciallo～(∠・ω< )⌒<span id="star">☆</span></p>
-        <p>你似乎来到了网络的荒野</p>
-        <p>正在施工中ing...等下再来看看吧？</p>
-        <button class="fbtn" onclick="rotateStar()">Superise!</button>
+<body>
+    <div class="login">
+        <div class="section">
+            <h4 class="title">登录</h4>
+            <form method="post">
+                {% csrf_token %}
+                <input type="hidden" name="next" value="{{ next }}">
+
+                <div class="login-box">
+                    <label for="email">邮箱</label>
+                    <div class="login-input"><input type="email" id="email" name="email" required />
+                        <span class="material-symbols-sharp">email</span>
+                    </div>
+                </div>
+                <div class="login-box">
+                    <label for="password">密码</label>
+                    <div class="login-input">
+                        <input type="password" id="password" name="password" required />
+                        <span class="material-symbols-sharp" id="password-eye">visibility_off</span>
+                    </div>
+                </div>
+                <div class="login-box">
+                    <label for="captcha">验证码</label>
+                    <div class="login-input">
+                        <input type="text" id="captcha" name="captcha" required />
+                        <span id="captcha-span">{{ captcha }}</span>
+                    </div>
+                </div>
+                <div class="rpwd">
+                    <input type="checkbox" id="remember" name="remember" />
+                    <label for="remember">下次直接登录</label>
+                </div>
+                <button type="submit" class="login-btn">登录</button>
+                <div class="btm">
+                    <p>还未注册账号？<a href="{% url 'user:register' %}">注册</a></p>
+                    <p>忘记了密码？<a href="{% url 'user:pwdReset' %}">密码重置</a></p>
+                </div>
+            </form>
+        </div>
     </div>
+    {% if messages %}
+    <ul class="messages">
+        {% for message in messages %}
+        <li {% if message.tags %}class="{{ message.tags }}" {% endif %}>{{ message }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+
+    <script>
+        $("#password-eye").click(function () {
+            if ($("#password").attr("type") === "password") {
+                $("#password").attr("type", "text");
+                $("#password-eye").text("visibility");
+            } else {
+                $("#password").attr("type", "password");
+                $("#password-eye").text("visibility_off");
+            }
+        });
+
+        $("#captcha-span").click(function () {
+            $(this).prev("input").val($(this).text());
+        });
+    </script>
 </body>
 
 </html>
