@@ -2,11 +2,13 @@
 <html lang="zh">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>有机化学与食品安全科普平台</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Symbols+Sharp" />
     <link rel="stylesheet" href="static/output.css">
+    <link rel="icon" href="static/logo.png" />
+    <title>有机化学与食品安全科普平台</title>
 </head>
 
 <body class="bg-[#edd9a1] text-[#171716]">
@@ -16,30 +18,57 @@
                 <h2>有机化学与食品安全</h2>
             </div>
             <ul class="flex justify-center list-none *:mx-4">
-                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500"
-                        href="#home">首页</a></li>
-                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500"
-                        href="#about">关于我们</a></li>
-                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500"
-                        href="#topics">科普专题</a></li>
+                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowrap"
+                        href="#home">
+                        <span class="material-symbols-sharp">home</span>
+                        首页
+                    </a></li>
+                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
+                        href="#users">
+                        <span class="material-symbols-sharp">account_circle</span>
+                        用户中心
+                    </a></li>
+                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
+                        href="#rss">
+                        <span class="material-symbols-sharp">rss_feed</span>
+                        有机化学论坛
+                    </a></li>
+                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
+                        href="#topics">
+                        <span class="material-symbols-sharp">view_kanban</span>
+                        科普专题
+                    </a></li>
+                <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
+                        href="#about">
+                        <span class="material-symbols-sharp">contact_support</span>
+                        关于我们
+                    </a></li>
             </ul>
         </nav>
     </header>
 
+    <section id="home" class="flex justify-center my-12">
+        <div class="px-12 py-8 text-center">
+            <h3 class="mb-5">了解有机化学，保障食品安全</h3>
+            <p class="mb-4">探索化学在食品安全中的重要角色，保护您的健康</p>
+            <button class="cta-button">立即学习</button>
+        </div>
+    </section>
+
     <div class="flex my-12 justify-around">
-        <section id="home" class="w-full">
+        <section id="users" class="w-full">
             <div class="px-12 py-8 text-center">
-                <h3 class="mb-5">了解有机化学，保障食品安全</h3>
-                <p class="mb-4">探索化学在食品安全中的重要角色，保护您的健康</p>
-                <button class="cta-button">立即学习</button>
+                <h3 class="mb-5">用户中心</h3>
+                <p class="mb-4"></p>
+                <button class="cta-button">过去看看</button>
             </div>
         </section>
 
-        <section id="about" class="w-full">
+        <section id="rss" class="w-full">
             <div class="px-12 py-8 text-center">
-                <h3 class="mb-5">关于我们</h3>
-                <p class="mb-4">我们致力于将有机化学的知识普及到每个人的生活中，帮助公众了解食品中的化学成分，保障健康安全。</p>
-                <button class="cta-button">联系我们</button>
+                <h3 class="mb-5">有机化学论坛</h3>
+                <p class="mb-4"></p>
+                <button class="cta-button">过去看看</button>
             </div>
         </section>
     </div>
@@ -64,8 +93,16 @@
         </div>
     </section>
 
-    <footer class="text-center mt-10 mb-2">
-        <p>&copy; 2025 有机化学与食品安全科普平台</p>
+    <section id="about" class="flex justify-center my-12">
+        <div class="px-12 py-8 text-center">
+            <h3 class="mb-5">关于我们</h3>
+            <p class="mb-4">我们致力于将有机化学的知识普及到每个人的生活中，帮助公众了解食品中的化学成分，保障健康安全。</p>
+            <button class="cta-button">联系我们</button>
+        </div>
+    </section>
+
+    <footer class="text-center mt-10 mb-4">
+        <p>&copy;&nbsp;2025&nbsp;有机化学与食品安全科普平台</p>
     </footer>
 </body>
 
