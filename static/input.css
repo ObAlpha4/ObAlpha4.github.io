@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @apply font-semibold;
+}
+
+h1 {
+    font-size: calc(1.375rem + 1.5vw);
+}
+
+h2 {
+    font-size: calc(1.325rem + 0.9vw);
+}
+
+h3 {
+    font-size: calc(1.3rem + 0.6vw);
+}
+
+h4 {
+    font-size: calc(1.275rem + 0.3vw);
+}
+
+h5 {
+    font-size: 1.25rem;
+}
+
+h6 {
+    font-size: 1rem;
+}
+
+.cta-button {
+    @apply cursor-pointer rounded-full border border-solid border-neutral-900 bg-transparent px-3 py-2 text-base transition-all duration-200 ease-in-out hover:bg-slate-400/50;
+}
+
+.card {
+    @apply w-[20rem] rounded-lg bg-white p-5 text-center shadow-md;
+}
