@@ -11,25 +11,26 @@
     <title>有机化学与食品安全科普平台</title>
 </head>
 
-<body class="bg-[#edd9a1] text-[#171716]">
+<body class="bg-black text-white">
     <header>
-        <nav class="flex justify-between items-center p-4">
-            <div class="logo">
-                <h2>有机化学与食品安全</h2>
+        <nav class="block md:flex justify-between items-center p-4">
+            <div class="logo mb-4 md:mb-0">
+                <h2>有机化学与食品安全<span class="text-nowrap">科普平台</span>
+                </h2>
             </div>
-            <ul class="flex justify-center list-none *:mx-4">
+            <ul class="flex justify-center items-center list-none *:mx-4">
                 <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowrap"
                         href="#home">
                         <span class="material-symbols-sharp">home</span>
                         首页
                     </a></li>
                 <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
-                        href="#users">
+                        href="https://django.obalpha4.dpdns.org/user/login.html">
                         <span class="material-symbols-sharp">account_circle</span>
                         用户中心
                     </a></li>
                 <li><a class="no-underline transition-colors duration-200 ease-in-out hover:text-sky-500 flex items-center gap-1 overflow-hidden text-nowra"
-                        href="#rss">
+                        href="https://django.obalpha4.dpdns.org/posts/home.html">
                         <span class="material-symbols-sharp">rss_feed</span>
                         有机化学论坛
                     </a></li>
@@ -49,8 +50,8 @@
 
     <section id="home" class="flex justify-center my-12">
         <div class="px-12 py-8 text-center">
-            <h3 class="mb-5">了解有机化学，保障食品安全</h3>
-            <p class="mb-4">探索化学在食品安全中的重要角色，保护您的健康</p>
+            <h3 class="mb-4">了解有机化学，保障食品安全</h3>
+            <p class="mb-5">探索有机化学在食品安全中的重要角色，保护您的健康。</p>
             <button class="cta-button">立即学习</button>
         </div>
     </section>
@@ -58,17 +59,18 @@
     <div class="flex my-12 justify-around">
         <section id="users" class="w-full">
             <div class="px-12 py-8 text-center">
-                <h3 class="mb-5">用户中心</h3>
-                <p class="mb-4"></p>
-                <button class="cta-button">过去看看</button>
+                <h3 class="mb-4">用户中心</h3>
+                <button class="cta-button"
+                    onclick="window.location.href='https://django.obalpha4.dpdns.org/user/login.html'">过去看看</button>
             </div>
         </section>
 
         <section id="rss" class="w-full">
             <div class="px-12 py-8 text-center">
-                <h3 class="mb-5">有机化学论坛</h3>
-                <p class="mb-4"></p>
-                <button class="cta-button">过去看看</button>
+                <h3 class="mb-4">有机化学论坛</h3>
+                <p class="mb-5">用户的交流站点</p>
+                <button class="cta-button"
+                    onclick="window.location.href='https://django.obalpha4.dpdns.org/posts/home.html'">过去看看</button>
             </div>
         </section>
     </div>
@@ -76,12 +78,12 @@
     <section id="topics" class="flex justify-center my-12">
         <div class="px-12 py-8 text-center">
             <h3 class="mb-5">科普专题</h3>
-            <div class="flex justify-center gap-5">
-                <div class="card">
+            <div class="block md:flex justify-center gap-5">
+                <div class="card mb-5 md:mb-0">
                     <h4 class="mb-2">有机化学基础</h4>
                     <p>从分子到结构，深入了解有机化学的基础知识。</p>
                 </div>
-                <div class="card">
+                <div class="card mb-5 md:mb-0">
                     <h4 class="mb-2">食品添加剂</h4>
                     <p>解密食品中常见的添加剂及其安全性。</p>
                 </div>
@@ -95,13 +97,13 @@
 
     <section id="about" class="flex justify-center my-12">
         <div class="px-12 py-8 text-center">
-            <h3 class="mb-5">关于我们</h3>
-            <p class="mb-4">我们致力于将有机化学的知识普及到每个人的生活中，帮助公众了解食品中的化学成分，保障健康安全。</p>
+            <h3 class="mb-4">关于我们</h3>
+            <p class="mb-5">我们致力于将有机化学的知识普及到每个人的生活中，帮助公众了解食品中的化学成分，保障健康安全。</p>
             <button class="cta-button">联系我们</button>
         </div>
     </section>
 
-    <footer class="text-center mt-10 mb-4">
+    <footer class="text-center mt-6 mb-4">
         <p>&copy;&nbsp;2025&nbsp;有机化学与食品安全科普平台</p>
     </footer>
 </body>

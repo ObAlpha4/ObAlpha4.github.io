@@ -45,9 +45,9 @@ input[type="password"]::-ms-clear {
 }
 
 .cta-button {
-    @apply cursor-pointer rounded-full border border-solid border-neutral-900 bg-transparent px-3 py-2 text-base transition-all duration-200 ease-in-out hover:bg-slate-400/50;
+    @apply cursor-pointer rounded-full border-2 border-solid border-neutral-300 bg-transparent px-3 py-2 text-base transition-all duration-200 ease-in-out hover:bg-slate-400/50;
 }
 
 .card {
-    @apply w-[20rem] rounded-lg bg-white p-5 text-center shadow-md;
+    @apply w-[20rem] rounded-lg bg-white text-black p-5 text-center shadow-md;
 }
